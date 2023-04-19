@@ -22,7 +22,7 @@ object AdapterBindings {
             radiusPx = (radius * scale + 0.5f).toInt()
 
             MultiTransformation(
-                FitCenter(),gitg
+                FitCenter(),
                 RoundedCornersTransformation(
                     radiusPx, 0,
                     cornerType
