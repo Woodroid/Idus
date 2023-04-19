@@ -5,9 +5,9 @@
 
 Clean Architecture : Data, Domain, Presentation Layer 구조
 
-DataLayer는 Repository Pattern 사용
-Domain Layer는 UseCase를 이용한 비즈니스 로직 구현
-Presentation Layer는 ViewModel 및 UIState를 통한 구현
+* DataLayer는 Repository Pattern 사용
+* Domain Layer는 UseCase를 이용한 비즈니스 로직 구현
+* Presentation Layer는 ViewModel 및 UIState를 통한 구현
 
 디자인 패턴 : MVVM
 
