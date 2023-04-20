@@ -1,9 +1,9 @@
 package com.example.booklistapplication.domain.usecase
 
-import com.example.booklistapplication.domain.model.BookWithDetails
+import com.example.booklistapplication.domain.model.BookWithDetailsModel
 
 interface SearchBooksAndCombineUseCase {
 
-    suspend operator fun invoke(query: String): Result<List<BookWithDetails>>
+    suspend operator fun invoke(query: String): Result<List<BookWithDetailsModel>>
 
 }

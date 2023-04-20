@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.example.booklistapplication.databinding.BookListItemBinding
-import com.example.booklistapplication.domain.model.BookWithDetails
+import com.example.booklistapplication.presentation.model.BookModel
 
-class BookListAdapter : ListAdapter<BookWithDetails, BookListViewHolder>(BookDiffCallback()) {
+class BookListAdapter : ListAdapter<BookModel, BookListViewHolder>(BookDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookListViewHolder {
         return BookListViewHolder(

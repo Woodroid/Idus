@@ -2,7 +2,7 @@ package com.example.booklistapplication.domain.usecase
 
 import com.example.booklistapplication.domain.repository.BookRepository
 import com.example.booklistapplication.domain.repository.SearchRepository
-import com.example.booklistapplication.domain.model.BookWithDetails
+import com.example.booklistapplication.domain.model.BookWithDetailsModel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
@@ -13,7 +13,7 @@ class SearchBooksAndCombineUseCaseImpl @Inject constructor(
     private val bookRepository: BookRepository
 ) : SearchBooksAndCombineUseCase {
 
-    override suspend operator fun invoke(query: String): Result<List<BookWithDetails>> = coroutineScope {
+    override suspend operator fun invoke(query: String): Result<List<BookWithDetailsModel>> = coroutineScope {
         val searchResult = searchRepository.search(query)
         if (searchResult.isSuccess) {
             val books = searchResult.getOrThrow()
@@ -27,7 +27,7 @@ class SearchBooksAndCombineUseCaseImpl @Inject constructor(
             val bookDetails = bookDetailsDeferreds.awaitAll()
 
             val results = bookDetails.map {
-                BookWithDetails(
+                BookWithDetailsModel(
                     title = it.title,
                     authors = it.authors,
                     publisher = it.publisher,

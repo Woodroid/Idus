@@ -1,15 +1,14 @@
 package com.example.booklistapplication.presentation.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.booklistapplication.databinding.ActivityMainBinding
-import com.example.booklistapplication.domain.model.BookWithDetails
 import com.example.booklistapplication.presentation.adapter.BookListAdapter
+import com.example.booklistapplication.presentation.model.BookModel
 import com.example.booklistapplication.presentation.ui.state.UIState
 import com.example.booklistapplication.presentation.viewModel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.visibility = View.GONE
     }
 
-    private fun showSuccess(books: List<BookWithDetails>, adapter: BookListAdapter) {
+    private fun showSuccess(books: List<BookModel>, adapter: BookListAdapter) {
         binding.progressBar.visibility = View.GONE
         binding.recyclerView.visibility = View.VISIBLE
         adapter.submitList(books)
