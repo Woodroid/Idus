@@ -2,7 +2,7 @@ package com.example.booklistapplication.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class BookResponse(
+data class BookDetailResponse(
     @SerializedName("error") val error: String,
     @SerializedName("title") val title: String,
     @SerializedName("subtitle") val subtitle: String,

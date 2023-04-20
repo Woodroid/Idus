@@ -3,11 +3,10 @@ package com.example.booklistapplication.di
 import com.example.booklistapplication.data.*
 import com.example.booklistapplication.data.remote.api.BookApi
 import com.example.booklistapplication.data.remote.api.SearchApi
-import com.example.booklistapplication.data.repository.BookRepository
-import com.example.booklistapplication.data.repository.BookRepositoryImpl
-import com.example.booklistapplication.data.repository.SearchRepository
-import com.example.booklistapplication.data.repository.SearchRepositoryImpl
-import dagger.Binds
+import com.example.booklistapplication.domain.repository.BookRepository
+import com.example.booklistapplication.data.repository.BookDetailRepositoryImpl
+import com.example.booklistapplication.domain.repository.SearchRepository
+import com.example.booklistapplication.data.repository.SearchBookRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,13 +20,13 @@ object RepositoryModule {
     @Singleton
     @Provides
     fun provideBookRepository(bookApi: BookApi): BookRepository {
-        return BookRepositoryImpl(bookApi)
+        return BookDetailRepositoryImpl(bookApi)
     }
 
     @Singleton
     @Provides
     fun provideSearchRepository(searchApi: SearchApi): SearchRepository {
-        return SearchRepositoryImpl(searchApi)
+        return SearchBookRepositoryImpl(searchApi)
     }
 
 }

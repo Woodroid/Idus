@@ -1,9 +1,8 @@
 package com.example.booklistapplication.di
 
-import com.example.booklistapplication.data.repository.BookRepository
-import com.example.booklistapplication.data.repository.SearchRepository
+import com.example.booklistapplication.domain.repository.BookRepository
+import com.example.booklistapplication.domain.repository.SearchRepository
 import com.example.booklistapplication.domain.usecase.*
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

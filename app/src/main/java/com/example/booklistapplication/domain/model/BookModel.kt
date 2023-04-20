@@ -1,7 +1,8 @@
 package com.example.booklistapplication.domain.model
 
 data class BookModel(val title: String,
-                     val authors: String,
-                     val publisher: String,
+                     val subtitle: String,
+                     val isbn13: String,
+                     val price: String,
                      val image: String,
-                     val price: String)
+                     val url: String)
